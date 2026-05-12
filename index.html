@@ -10,65 +10,29 @@
 <body>
   <div class="app-shell">
     <aside class="sidebar" id="sidebar">
-      <div class="brand">
-        <div class="brand-mark">F</div>
-        <div>
-          <h1>Module F</h1>
-          <p>Literature Study Hub</p>
-        </div>
-      </div>
-
+      <div class="brand"><div class="brand-mark">F</div><div><h1>Module F</h1><p>Literature Study Hub</p></div></div>
       <button class="mobile-close" id="closeSidebar" aria-label="Close navigation">×</button>
-
       <div class="search-box">
         <label for="siteSearch">Search everything</label>
         <input id="siteSearch" type="search" placeholder="Search characters, themes, questions..." autocomplete="off" />
+        <div class="suggestions" id="searchSuggestions" hidden></div>
       </div>
-
       <nav class="nav" id="mainNav" aria-label="Main navigation"></nav>
-
-      <div class="sidebar-footer">
-        <p>Exam format: 4 pieces, 4 questions shown per piece, choose 1 answer per piece.</p>
-      </div>
+      <div class="sidebar-footer"><p>Exam format: 4 pieces, 4 questions shown per piece, choose 1 answer per piece.</p></div>
     </aside>
-
     <div class="overlay" id="overlay"></div>
-
     <main class="main">
-      <header class="topbar">
-        <button class="hamburger" id="openSidebar" aria-label="Open navigation">☰</button>
-        <div class="breadcrumb" id="breadcrumb">Home</div>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">◐</button>
-      </header>
-
-      <section class="search-results" id="searchResults" hidden></section>
+      <header class="topbar"><button class="hamburger" id="openSidebar" aria-label="Open navigation">☰</button><div class="breadcrumb" id="breadcrumb">Home</div><button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">◐</button></header>
       <section class="page" id="page"></section>
     </main>
   </div>
-
   <template id="homeTemplate">
     <div class="hero">
-      <div class="hero-content">
-        <span class="eyebrow">English Bagrut - Module F</span>
-        <h2>Study faster, answer smarter.</h2>
-        <p>This site organizes the four pieces, summaries, analysis, and question pools into clear exam-ready pages.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#/piece/a-summers-reading/summary">Start studying</a>
-          <a class="button ghost" href="#/strategy">Answer strategy</a>
-        </div>
-      </div>
-      <div class="hero-card">
-        <strong>Study flow</strong>
-        <ol>
-          <li>Review plot and characters.</li>
-          <li>Memorize 2-3 examples per piece.</li>
-          <li>Practice the exact pool questions.</li>
-          <li>Use HOTS words when needed.</li>
-        </ol>
-      </div>
+      <div class="hero-content"><span class="eyebrow">English Bagrut - Module F</span><h2>Study faster, answer smarter.</h2><p>This site organizes the four pieces, summaries, analysis, and question pools into clear exam-ready pages.</p><div class="hero-actions"><a class="button primary" href="#/piece/a-summers-reading/summary">Start studying</a><a class="button ghost" href="#/strategy">Answer strategy</a></div></div>
+      <div class="hero-card"><strong>Study flow</strong><ol><li>Review plot and characters.</li><li>Memorize 2-3 examples per piece.</li><li>Practice the exact pool questions.</li><li>Use HOTS words when needed.</li></ol></div>
     </div>
     <div class="grid" id="homeCards"></div>
   </template>
+  <script src="app.js"></script>
 </body>
-<script src="app.js"></script>
 </html>
