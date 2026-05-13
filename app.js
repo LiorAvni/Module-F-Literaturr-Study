@@ -759,134 +759,249 @@ const pieces = {
       ]
     },
     "questions": [
-      {
-        "q": "How would you feel if you were Waverly? Explain why.",
-        "e": [
-          "At least one of Waverly's feelings",
-          "An example from the story example showing why Waverly felt the way she did",
-          "An explanation of the effect / result",
-          "Sentence Starters:",
-          "If I were Waverly, I would feel ___ because ___",
-          "One reason for this feeling is that ___ (story example)",
-          "This shows that ___",
-          "One feeling: pressured/ frustrated /annoyed/ torn"
-        ]
-      },
-      {
-        "q": "What real-life people or events are you reminded of? Explain why.",
-        "e": [
-          "A real-life example",
-          "The connection to the story",
-          "An explanation of similarity (textual support)",
-          "Sentence Starters:",
-          "This reminds me of ___ because ___",
-          "In the story, ___ happens, which is similar to ___",
-          "Connections: strict parents, competitive activities, immigrant families"
-        ]
-      },
-      {
-        "q": "If the events happened at present, how would they be different?",
-        "e": [
-          "An event as it happened in the story (textual support)",
-          "The way the event would happen today with a clear example of change",
-          "Sentence Starters:",
-          "If the story happened today, ___ would be different because ___",
-          "For example, instead of ___, today people would ___"
-        ]
-      },
-      {
-        "q": "Describe an event from your life and compare it to the story.",
-        "e": [
-          "A personal event",
-          "An event from the story (textual support)",
-          "Clear similarity or difference",
-          "Sentence Starters:",
-          "A similar situation happened to me when ___",
-          "In the story, ___, which is similar because ___"
-        ]
-      },
-      {
-        "q": "Write about what would happen if you brought one of the characters to school or home for a day.",
-        "e": [
-          "Choose a character",
-          "Describe the character's behavior based on the story (textual support)",
-          "Describe the character's behavior in the new setting and explain others’ reactions",
-          "Sentence Starters:",
-          "If I brought ___ to school/home, they would ___",
-          "I think this because in the story ___",
-          "Choose Waverly or Mrs. Jong",
-          "Accurate behavior references:",
-          "Waverly: quiet, observant, strategic (like when she watched chess games in the park before learning rules)",
-          "She may dislike too much attention (as seen in the market scene)",
-          "She may focus on tasks intensely (like she practiced chess to prepare for tournaments)",
-          "Mrs. Jong: gives strict instructions (like when she tells Waverly to use invisible strength)",
-          "Expects obedience at home (seen in how she instructs children about gifts and chores)"
-        ]
-      },
-      {
-        "q": "Describe a conflict you experienced. How would Waverly / Mrs. Jong react?",
-        "e": [
-          "A personal conflict",
-          "Waverly’s possible reaction / Mrs. Jong’s possible reaction (based on textual support)",
-          "Sentence Starters:",
-          "In my conflict, I ___",
-          "I think Waverly would ___ because in the story she ___",
-          "I think Mrs. Jong would ___ because she ___ in the story"
-        ]
-      },
-      {
-        "q": "How does the author make the story seem realistic?",
-        "e": [
-          "Realistic details (setting, characters, actions)",
-          "Story example",
-          "Explanation",
-          "Textual support",
-          "Sentence Starters:",
-          "The story seems realistic because ___",
-          "One example from the story is ___"
-        ]
-      },
-      {
-        "q": "Where and when does the story take place? How does this affect events?",
-        "e": [
-          "Place + time",
-          "Effect on characters or events",
-          "Textual support",
-          "Sentence Starters:",
-          "The story takes place in ___ and during ___",
-          "This affects events because ___",
-          "Place: San Francisco’s Chinatown",
-          "Time: Late 1950s–1960s (post-WWII immigrant generation)",
-          "Accurate effects:",
-          "Immigrant values clash with American independence",
-          "Limited resources → Waverly learns chess from the park and library, not private lessons",
-          "Family reputation matters in a close immigrant community"
-        ]
-      },
-      {
-        "q": "What problem does the narrator face? How does she solve it?",
-        "e": [
-          "A description of Waverly's main problem (including an example of it)",
-          "How she deals with it (including an example)",
-          "Sentence Starters:",
-          "The narrator’s main problem is ___",
-          "This problem occurs when ___",
-          "She tries to solve it by ___",
-          "The narrator’s main problem is ___",
-          "This problem happens because ___",
-          "She tries to solve it by ___",
-          "Include:",
-          "Problem: balancing independence with her mother’s control and expectations",
-          "Accurate examples:",
-          "Waverly wins tournaments and gains attention, but feels interference from her mother",
-          "Market argument: Waverly tells her mother to stop boasting",
-          "Waverly runs away and later returns home quietly",
-          "She thinks deeply in her room, ponders her next move like a chess game",
-          "Solution:",
-          "No simple ending—Waverly gains a realization that life is like chess and she must develop her own strategies"
-        ]
-      }
-    ]
+    {
+      "q": "How would you feel if you were Waverly? Explain why.",
+      "sections": [
+        {
+          "title": "What your answer needs:",
+          "bullets": [
+            "At least one of Waverly's feelings",
+            "An example from the story example showing why Waverly felt the way she did",
+            "An explanation of the effect / result"
+          ]
+        },
+        {
+          "title": "Sentence Starters:",
+          "bullets": [
+            "If I were Waverly, I would feel ___ because ___",
+            "One reason for this feeling is that ___ (story example)",
+            "This shows that ___",
+            "One feeling: pressured/ frustrated /annoyed/ torn"
+          ]
+        }
+      ]
+    },
+    {
+      "q": "What real-life people or events are you reminded of? Explain why.",
+      "sections": [
+        {
+          "title": "What your answer needs:",
+          "bullets": [
+            "A real-life example",
+            "The connection to the story",
+            "An explanation of similarity (textual support)"
+          ]
+        },
+        {
+          "title": "Sentence Starters:",
+          "bullets": [
+            "This reminds me of ___ because ___",
+            "In the story, ___ happens, which is similar to ___",
+            "Connections: strict parents, competitive activities, immigrant families"
+          ]
+        }
+      ]
+    },
+    {
+      "q": "If the events happened at present, how would they be different?",
+      "sections": [
+        {
+          "title": "What your answer needs:",
+          "bullets": [
+            "An event as it happened in the story (textual support)",
+            "The way the event would happen today with a clear example of change"
+          ]
+        },
+        {
+          "title": "Sentence Starters:",
+          "bullets": [
+            "If the story happened today, ___ would be different because ___",
+            "For example, instead of ___, today people would ___"
+          ]
+        }
+      ]
+    },
+    {
+      "q": "Describe an event from your life and compare it to the story.",
+      "sections": [
+        {
+          "title": "What your answer needs:",
+          "bullets": [
+            "A personal event",
+            "An event from the story (textual support)",
+            "Clear similarity or difference"
+          ]
+        },
+        {
+          "title": "Sentence Starters:",
+          "bullets": [
+            "A similar situation happened to me when ___",
+            "In the story, ___, which is similar because ___"
+          ]
+        }
+      ]
+    },
+    {
+      "q": "Write about what would happen if you brought one of the characters to school or home for a day.",
+      "sections": [
+        {
+          "title": "What your answer needs:",
+          "bullets": [
+            "Choose a character",
+            "Describe the character's behavior based on the story (textual support)",
+            "Describe the character's behavior in the new setting and explain others’ reactions"
+          ]
+        },
+        {
+          "title": "Sentence Starters:",
+          "bullets": [
+            "If I brought ___ to school/home, they would ___",
+            "I think this because in the story ___"
+          ]
+        },
+        {
+          "title": "Choose Waverly or Mrs. Jong:",
+          "bullets": [
+            {
+              "text": "Waverly:",
+              "children": [
+                "quiet, observant, strategic (like when she watched chess games in the park before learning rules)",
+                "She may dislike too much attention (as seen in the market scene)",
+                "She may focus on tasks intensely (like she practiced chess to prepare for tournaments)"
+              ]
+            },
+            {
+              "text": "Mrs. Jong:",
+              "children": [
+                "gives strict instructions (like when she tells Waverly to use invisible strength)",
+                "Expects obedience at home (seen in how she instructs children about gifts and chores)"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "q": "Describe a conflict you experienced. How would Waverly / Mrs. Jong react?",
+      "sections": [
+        {
+          "title": "What your answer needs:",
+          "bullets": [
+            "A personal conflict",
+            "Waverly’s possible reaction / Mrs. Jong’s possible reaction (based on textual support)"
+          ]
+        },
+        {
+          "title": "Sentence Starters:",
+          "bullets": [
+            "In my conflict, I ___",
+            "I think Waverly would ___ because in the story she ___",
+            "I think Mrs. Jong would ___ because she ___ in the story"
+          ]
+        }
+      ]
+    },
+    {
+      "q": "How does the author make the story seem realistic?",
+      "sections": [
+        {
+          "title": "What your answer needs:",
+          "bullets": [
+            "Realistic details (setting, characters, actions)",
+            "Story example",
+            "Explanation",
+            "Textual support"
+          ]
+        },
+        {
+          "title": "Sentence Starters:",
+          "bullets": [
+            "The story seems realistic because ___",
+            "One example from the story is ___"
+          ]
+        }
+      ]
+    },
+    {
+      "q": "Where and when does the story take place? How does this affect events?",
+      "sections": [
+        {
+          "title": "What your answer needs:",
+          "bullets": [
+            "Place + time",
+            "Effect on characters or events",
+            "Textual support"
+          ]
+        },
+        {
+          "title": "Sentence Starters:",
+          "bullets": [
+            "The story takes place in ___ and during ___",
+            "This affects events because ___"
+          ]
+        },
+        {
+          "title": "Include:",
+          "bullets": [
+            "Place: San Francisco’s Chinatown",
+            "Time: Late 1950s–1960s (post-WWII immigrant generation)",
+            {
+              "text": "Accurate effects:",
+              "children": [
+                "Immigrant values clash with American independence",
+                "Limited resources → Waverly learns chess from the park and library, not private lessons",
+                "Family reputation matters in a close immigrant community"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "q": "What problem does the narrator face? How does she solve it?",
+      "sections": [
+        {
+          "title": "What your answer needs:",
+          "bullets": [
+            "A description of Waverly's main problem (including an example of it)",
+            "How she deals with it (including an example)"
+          ]
+        },
+        {
+          "title": "Sentence Starters:",
+          "bullets": [
+            "The narrator’s main problem is ___",
+            "This problem occurs when ___",
+            "She tries to solve it by ___",
+            "The narrator’s main problem is ___",
+            "This problem happens because ___",
+            "She tries to solve it by ___"
+          ]
+        },
+        {
+          "title": "Include:",
+          "bullets": [
+            "Problem: balancing independence with her mother’s control and expectations",
+            {
+              "text": "Accurate examples:",
+              "children": [
+                "Waverly wins tournaments and gains attention, but feels interference from her mother",
+                "Market argument: Waverly tells her mother to stop boasting",
+                "Waverly runs away and later returns home quietly",
+                "She thinks deeply in her room, ponders her next move like a chess game"
+              ]
+            },
+            {
+              "text": "Solution:",
+              "children": [
+                "No simple ending—Waverly gains a realization that life is like chess and she must develop her own strategies"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
   },
   "the-road-not-taken": {
     "title": "The Road Not Taken",
