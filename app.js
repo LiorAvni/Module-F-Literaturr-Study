@@ -1385,20 +1385,98 @@ function route() {
     window.scrollTo({top:0, behavior:"auto"});
   }, 30);
 }
+function expectedTextForSearch(item) {
+  if (Array.isArray(item.sections)) {
+    return item.sections.map(section => {
+      const bullets = Array.isArray(section.bullets)
+        ? section.bullets.map(bullet => {
+            if (typeof bullet === "string") return bullet;
+            if (bullet && typeof bullet === "object") {
+              return `${bullet.text || ""} ${Array.isArray(bullet.children) ? bullet.children.join(" ") : ""}`;
+            }
+            return "";
+          }).join(" ")
+        : "";
+
+      return `${section.title || ""} ${bullets}`;
+    }).join(" ");
+  }
+
+  if (Array.isArray(item.e)) {
+    return item.e.join(" ");
+  }
+
+  return "";
+}
+
 function buildSearchIndex() {
   const index = [];
+
   Object.entries(pieces).forEach(([slug, piece]) => {
-    index.push({title: piece.title, type:"Piece", url:makeUrl(slug,"summary"), text:`${piece.title} ${piece.author} ${piece.short}`});
-    index.push({title:`${piece.title}: Overview`, type:"Summary", url:makeUrl(slug,"summary","overview"), text:piece.summary.overview});
-    const groups = {"plot":"Plot timeline", "characters":"Characters", "themes":"Themes", "symbols":"Symbols and motifs", "deepAnalysis":"Deep analysis", "questionAnalysis":"Question-pool integrated analysis", "examTips":"Exam tips"};
-    Object.entries(groups).forEach(([key,label]) => {
-      const value = piece.summary[key]; const text = Array.isArray(value) ? value.flat(2).join(" ") : String(value);
-      index.push({title:`${piece.title}: ${label}`, type:"Analysis", url:makeUrl(slug,"summary",slugify(label)), text});
+    index.push({
+      title: piece.title,
+      type: "Piece",
+      url: makeUrl(slug, "summary"),
+      text: `${piece.title} ${piece.author} ${piece.short}`
     });
-    piece.questions.forEach((item, i) => index.push({title:`${piece.title}: Question ${i+1}`, type:"Question", url:makeUrl(slug,"questions",`q-${i+1}`), text:`${item.q} ${item.e.join(" ")}`}));
-    if (piece.text) index.push({title:`${piece.title}: Original text`, type:"Text", url:makeUrl(slug,"text"), text:piece.text});
+
+    index.push({
+      title: `${piece.title}: Overview`,
+      type: "Summary",
+      url: makeUrl(slug, "summary", "overview"),
+      text: piece.summary.overview
+    });
+
+    const groups = {
+      "plot": "Plot timeline",
+      "characters": "Characters",
+      "themes": "Themes",
+      "symbols": "Symbols and motifs",
+      "deepAnalysis": "Deep analysis",
+      "questionAnalysis": "Question-pool integrated analysis",
+      "examTips": "Exam tips"
+    };
+
+    Object.entries(groups).forEach(([key, label]) => {
+      const value = piece.summary[key];
+      const text = Array.isArray(value) ? value.flat(2).join(" ") : String(value || "");
+
+      index.push({
+        title: `${piece.title}: ${label}`,
+        type: "Analysis",
+        url: makeUrl(slug, "summary", slugify(label)),
+        text
+      });
+    });
+
+    piece.questions.forEach((item, i) => {
+      index.push({
+        title: `${piece.title}: Question ${i + 1}`,
+        type: "Question",
+        url: makeUrl(slug, "questions", `q-${i + 1}`),
+        text: `${item.q} ${expectedTextForSearch(item)}`
+      });
+    });
+
+    if (piece.text) {
+      index.push({
+        title: `${piece.title}: Original text`,
+        type: "Text",
+        url: makeUrl(slug, "text"),
+        text: piece.text
+      });
+    }
   });
-  strategyContent.blocks.forEach(([h,p],i) => index.push({title:h, type:"Strategy", url:`#/strategy/${`strategy-${i+1}`}`, text:p}));
+
+  strategyContent.blocks.forEach(([h, p], i) => {
+    index.push({
+      title: h,
+      type: "Strategy",
+      url: `#/strategy/${`strategy-${i + 1}`}`,
+      text: p
+    });
+  });
+
   return index;
 }
 const searchIndex = buildSearchIndex();
