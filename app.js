@@ -1305,64 +1305,62 @@ function renderSummary(piece, slug) {
     ${accordion("Question-pool integrated analysis", pairItems(s.questionAnalysis), "question-pool-integrated-analysis")}
     ${accordion("Exam tips", listItems(s.examTips), "exam-tips")}`;
 }
-function renderQuestions(piece, slug) {
-  function defaultExpectedTitle(piece) {
+function defaultExpectedTitle(piece) {
   if (piece.title === "Rules of the Game") return "What your answer needs:";
   if (piece.title === "The Road Not Taken") return "What your answer should include:";
   if (piece.title === "Mr. Know-All") return "Your answer must include:";
   return "What your answer must include:";
+}
+
+function renderExpectedBullet(bullet) {
+  if (typeof bullet === "string") {
+    return `<li>${escapeHtml(bullet)}</li>`;
   }
-  
-  function renderExpectedBullet(bullet) {
-    if (typeof bullet === "string") {
-      return `<li>${escapeHtml(bullet)}</li>`;
-    }
-  
-    if (bullet && typeof bullet === "object") {
-      const children = Array.isArray(bullet.children) && bullet.children.length
-        ? `<ul class="nested-expected-list">${bullet.children.map(child => `<li>${escapeHtml(child)}</li>`).join("")}</ul>`
-        : "";
-  
-      return `<li><span>${escapeHtml(bullet.text || "")}</span>${children}</li>`;
-    }
-  
-    return "";
+
+  if (bullet && typeof bullet === "object") {
+    const children = Array.isArray(bullet.children) && bullet.children.length
+      ? `<ul class="nested-expected-list">${bullet.children.map(child => `<li>${escapeHtml(child)}</li>`).join("")}</ul>`
+      : "";
+
+    return `<li><span>${escapeHtml(bullet.text || "")}</span>${children}</li>`;
   }
-  
-  function renderExpectedSections(item, piece) {
-    if (Array.isArray(item.sections)) {
-      return item.sections.map(section => `
-        <div class="expected-section">
-          <div class="expected-title">${escapeHtml(section.title)}</div>
-          ${Array.isArray(section.bullets) && section.bullets.length
-            ? `<ul>${section.bullets.map(renderExpectedBullet).join("")}</ul>`
-            : ""}
-        </div>
-      `).join("");
-    }
-  
-    return `
+
+  return "";
+}
+
+function renderExpectedSections(item, piece) {
+  if (Array.isArray(item.sections)) {
+    return item.sections.map(section => `
       <div class="expected-section">
-        <div class="expected-title">${escapeHtml(item.expectedTitle || defaultExpectedTitle(piece))}</div>
-        <ul>${(item.e || []).map(renderExpectedBullet).join("")}</ul>
+        <div class="expected-title">${escapeHtml(section.title)}</div>
+        ${Array.isArray(section.bullets) && section.bullets.length
+          ? `<ul>${section.bullets.map(renderExpectedBullet).join("")}</ul>`
+          : ""}
       </div>
-    `;
+    `).join("");
   }
-  
-  function renderQuestions(piece, slug) {
-    page.innerHTML = titleBlock(piece, `Question pool: ${piece.questions.length} questions`) + sectionTabs(slug, "questions") + `
-      <div class="notice"><strong>How to use:</strong> practice each question with one clear claim, at least one story example, and an explanation of why the example proves your answer.</div>
-      ${piece.questions.map((item, i) => `
-        <article class="question-card" id="q-${i + 1}">
-          <span class="tag">Question ${i + 1}</span>
-          <h3>${escapeHtml(item.q)}</h3>
-          <div class="expected">
-            ${renderExpectedSections(item, piece)}
-          </div>
-        </article>
-      `).join("")}
-    `;
-  }
+
+  return `
+    <div class="expected-section">
+      <div class="expected-title">${escapeHtml(item.expectedTitle || defaultExpectedTitle(piece))}</div>
+      <ul>${(item.e || []).map(renderExpectedBullet).join("")}</ul>
+    </div>
+  `;
+}
+
+function renderQuestions(piece, slug) {
+  page.innerHTML = titleBlock(piece, `Question pool: ${piece.questions.length} questions`) + sectionTabs(slug, "questions") + `
+    <div class="notice"><strong>How to use:</strong> practice each question with one clear claim, at least one story example, and an explanation of why the example proves your answer.</div>
+    ${piece.questions.map((item, i) => `
+      <article class="question-card" id="q-${i + 1}">
+        <span class="tag">Question ${i + 1}</span>
+        <h3>${escapeHtml(item.q)}</h3>
+        <div class="expected">
+          ${renderExpectedSections(item, piece)}
+        </div>
+      </article>
+    `).join("")}
+  `;
 }
 function renderStrategy() {
   breadcrumb.textContent = "Answer strategy";
